@@ -9,6 +9,10 @@ const port = process.env.PORT || 3333;
 app.use(express.json());
 app.use(express.raw({ type: "application/vnd.custom-type" }));
 app.use(express.text({ type: "text/html" }));
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*')
+  next();
+});
 
 app.get("/", async (req, res) => {
   res.json({ message: "Please visit /persons to view all the persons" });
