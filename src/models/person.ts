@@ -7,7 +7,7 @@ const subSchema = new Schema({
     negative: {
         type: Number,
     },
-}, { collection: 'persons' });
+});
 
 interface IVote extends Document {
     positive: number;
@@ -51,7 +51,7 @@ const PersonSchema = new Schema({
   votes: {
     type: subSchema
   }
-});
+},{ collection: 'persons' });
 
 const PersonModel = model<IPerson>("Person", PersonSchema);
 
