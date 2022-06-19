@@ -33,6 +33,7 @@ routes.put("/", async (req, res) => {
     else{
         personExists.votes.negative += 1;
     }
+    personExists.lastUpdated = new Date();
 
     await personExists.save();
     return res.status(201).json({

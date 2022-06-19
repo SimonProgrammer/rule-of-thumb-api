@@ -17,6 +17,10 @@ app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Methods', '*')
   next();
 });
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Headers', '*')
+  next();
+});
 
 app.get("/", async (req, res) => {
   res.json({ message: "Please visit /persons to view all the persons" });
