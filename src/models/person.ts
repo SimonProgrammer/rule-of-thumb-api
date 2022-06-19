@@ -24,7 +24,8 @@ interface IPerson extends Document {
     code: string;
     description: string;
     category: string;
-    picture: string;
+    pictureGrid: string;
+    pictureList: string;
     lastUpdated: Date;
     votes: IVote;
 }
@@ -42,7 +43,10 @@ const PersonSchema = new Schema({
   category: {
     type: String,
   },
-  picture: {
+  pictureGrid: {
+    type: String,
+  },
+  pictureList: {
     type: String,
   },
   lastUpdated: {
