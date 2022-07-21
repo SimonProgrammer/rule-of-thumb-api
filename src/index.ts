@@ -1,7 +1,7 @@
 import "./lib/db";
 import express from "express";
-import countryRoutes from "./routes/country";
 import personRoutes from "./routes/person";
+import paymentRoutes from "./routes/payment";
 
 const app = express();
 const port = process.env.PORT || 3333;
@@ -26,8 +26,8 @@ app.get("/", async (req, res) => {
   res.json({ message: "Please visit /persons to view all the persons" });
 });
 
-app.use("/countries", countryRoutes);
 app.use("/persons", personRoutes);
+app.use("/payments", paymentRoutes);
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
